@@ -8,7 +8,11 @@ const listContacts = async () => {
   return JSON.parse(data);
 };
 
-const getContactById = async () => {};
+const getContactById = async (id) => {
+  const contacts = await listContacts();
+  const contactById = contacts.find((item) => item.id === id);
+  return contactById;
+};
 
 const removeContact = async () => {};
 
